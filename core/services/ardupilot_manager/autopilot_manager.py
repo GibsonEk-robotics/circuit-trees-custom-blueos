@@ -662,4 +662,3 @@ class AutoPilotManager(metaclass=Singleton):
 
     def restore_default_firmware(self, board: FlightController) -> None:
         self.firmware_manager.restore_default_firmware(board)
-        
