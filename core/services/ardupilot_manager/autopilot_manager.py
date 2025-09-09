@@ -588,6 +588,12 @@ class AutoPilotManager(metaclass=Singleton):
                 raise RuntimeError(f"Invalid board type: {flight_controller}")
         finally:
             self.should_be_running = True
+            try:
+                from pydub import AudioSegment
+                from pydub.playback import play
+                audio = AudioSegment.from_mp3('/usr/bin/audio/beeps.mp3')
+            except Exception as e:
+                print(f"Could not play audio: {e}")
 
     async def restart_ardupilot(self) -> None:
         if self.current_board is None or self.current_board.type in [PlatformType.SITL, PlatformType.Linux]:
