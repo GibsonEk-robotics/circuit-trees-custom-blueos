@@ -91,7 +91,6 @@ COPY --from=download-binaries \
     /usr/bin/zenoh \
     /usr/bin/mavp2p \
     /usr/bin/ttyd \
-    /usr/bin/audio \
     /usr/bin/
 
 # Copy frontend built on frontend-builder to this stage
