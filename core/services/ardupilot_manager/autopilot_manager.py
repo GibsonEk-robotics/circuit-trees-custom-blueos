@@ -591,7 +591,7 @@ class AutoPilotManager(metaclass=Singleton):
             try:
                 from pydub import AudioSegment
                 from pydub.playback import play
-                
+
                 audio = AudioSegment.from_mp3("/usr/bin/audio/beeps.mp3")
             except Exception as e:
                 print(f"Could not play audio: {e}")
