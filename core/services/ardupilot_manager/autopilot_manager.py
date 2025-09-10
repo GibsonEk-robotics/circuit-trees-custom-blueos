@@ -1,18 +1,16 @@
 import asyncio
 import os
 import pathlib
-import pydub
 import subprocess
 import time
 from copy import deepcopy
 from typing import Any, List, Optional, Set
 
 import psutil
+import pydub
 from commonwealth.mavlink_comm.VehicleManager import VehicleManager
 from commonwealth.utils.Singleton import Singleton
 from elftools.elf.elffile import ELFFile
-from loguru import logger
-
 from exceptions import (
     AutoPilotProcessKillFail,
     NoDefaultFirmwareAvailable,
@@ -21,6 +19,7 @@ from exceptions import (
 from firmware.FirmwareManagement import FirmwareManager
 from flight_controller_detector.Detector import Detector as BoardDetector
 from flight_controller_detector.linux.linux_boards import LinuxFlightController
+from loguru import logger
 from mavlink_proxy.Endpoint import Endpoint, EndpointType
 from mavlink_proxy.exceptions import EndpointAlreadyExists
 from mavlink_proxy.Manager import Manager as MavlinkManager
