@@ -7,7 +7,6 @@ from copy import deepcopy
 from typing import Any, List, Optional, Set
 
 import psutil
-import pydub
 from commonwealth.mavlink_comm.VehicleManager import VehicleManager
 from commonwealth.utils.Singleton import Singleton
 from elftools.elf.elffile import ELFFile
@@ -592,6 +591,7 @@ class AutoPilotManager(metaclass=Singleton):
             try:
                 from pydub import AudioSegment
                 from pydub.playback import play
+                
                 audio = AudioSegment.from_mp3('/usr/bin/audio/beeps.mp3')
             except Exception as e:
                 print(f"Could not play audio: {e}")
