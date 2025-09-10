@@ -592,6 +592,7 @@ class AutoPilotManager(metaclass=Singleton):
             self.should_be_running = True
             try:
                 audio = AudioSegment.from_mp3("/usr/bin/audio/beeps.mp3")
+                play(audio)
             except Exception as e:
                 print(f"Could not play audio: {e}")
 
