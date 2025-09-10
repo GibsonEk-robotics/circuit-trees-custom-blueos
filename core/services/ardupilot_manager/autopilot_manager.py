@@ -23,6 +23,8 @@ from flight_controller_detector.linux.linux_boards import LinuxFlightController
 from mavlink_proxy.Endpoint import Endpoint, EndpointType
 from mavlink_proxy.exceptions import EndpointAlreadyExists
 from mavlink_proxy.Manager import Manager as MavlinkManager
+from pydub import AudioSegment
+from pydub.playback import play
 from settings import Settings
 from typedefs import (
     Firmware,
@@ -589,9 +591,6 @@ class AutoPilotManager(metaclass=Singleton):
         finally:
             self.should_be_running = True
             try:
-                from pydub import AudioSegment
-                from pydub.playback import play
-
                 audio = AudioSegment.from_mp3("/usr/bin/audio/beeps.mp3")
             except Exception as e:
                 print(f"Could not play audio: {e}")
