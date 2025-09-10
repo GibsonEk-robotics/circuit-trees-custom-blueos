@@ -11,6 +11,8 @@ from commonwealth.mavlink_comm.VehicleManager import VehicleManager
 from commonwealth.utils.Singleton import Singleton
 from elftools.elf.elffile import ELFFile
 from loguru import logger
+from pydub import AudioSegment
+from pydub.playback import play
 
 from exceptions import (
     AutoPilotProcessKillFail,
@@ -23,8 +25,6 @@ from flight_controller_detector.linux.linux_boards import LinuxFlightController
 from mavlink_proxy.Endpoint import Endpoint, EndpointType
 from mavlink_proxy.exceptions import EndpointAlreadyExists
 from mavlink_proxy.Manager import Manager as MavlinkManager
-from pydub import AudioSegment
-from pydub.playback import play
 from settings import Settings
 from typedefs import (
     Firmware,
